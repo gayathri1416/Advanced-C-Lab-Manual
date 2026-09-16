@@ -16,12 +16,31 @@ Else
  
 Program:
 
-//type your code here
+#include <stdio.h>
+struct Person {
+    int age;
+    char name[50];
+}per;
+
+int main() {
+    scanf("%d %s",&per.age,per.name);
+    
+    printf("Age:%d\n",per.age);
+    printf("Name:%svaccine:%d\n",per.name,per.age);
+    if (per.age <= 18) {
+        printf("eligibility:no\n");
+    } else {
+        printf("eligibility:yes\n");
+    }
+    
+    return 0;
+}
 
 
 Output:
 
-//paste your output here
+<img width="663" height="203" alt="image" src="https://github.com/user-attachments/assets/e6cf3aca-a273-49ae-8593-3d6a29ac30e0" />
+
 
 
 Result:
@@ -44,7 +63,35 @@ Algorithm:
  
 Program:
 
-//type your code here
+#include <stdio.h>
+struct Input
+{
+    int x;
+    int y;
+};
+
+struct Output
+{
+    int sum;
+};
+
+struct Output add(struct Input in) 
+{
+    struct Output out;
+    out.sum = in.x + in.y;
+    return out;
+}
+
+int main() {
+    struct Input values;
+    struct Output result;
+    scanf("%d", &values.x);
+    scanf("%d", &values.y);
+    result = add(values);
+    printf("%d\n", result.sum);
+
+    return 0;
+}
 
 
 
@@ -52,7 +99,8 @@ Program:
 Output:
 
 
-//paste your output here
+<img width="884" height="316" alt="image" src="https://github.com/user-attachments/assets/7d62d9b5-e001-4427-97a5-6e4767f242b2" />
+
 
 
 
@@ -86,15 +134,33 @@ Use scanf to input the file name into the name array.
  
 Program:
 
-//type your code here
+
+#include <stdio.h>
+int main()
+{
+    FILE *fp;
+    char name[20];
+    scanf("%s",name);
+    fp=fopen(name,"w");
+    if(fp==NULL)
+    {
+        printf("error checking");
+    }
+    else
+    {
+        printf("%s File Created Successfully\n%s File Opened\n",name,name);
+    }
+    fclose(fp);
+    printf("%s File Closed\n",name);
+}
 
 
 
 
 Output:
 
+<img width="1044" height="384" alt="image" src="https://github.com/user-attachments/assets/bb61f2da-be7e-412c-85ae-a3d4b1954d4f" />
 
-//paste your output here
 
 
 
@@ -133,17 +199,39 @@ Use scanf to input the file name into the name array and the number of strings i
  
 Program:
 
-//type your code here
+#include <stdio.h>
 
+int main() {
+    char filename[100];
+    char line[100];
+    int n, i;
+    FILE *file;
+    scanf("%s", filename);
+    file = fopen(filename, "w");
 
+    if (file == NULL) 
+    {
+        printf("Error: Could not create %s\n", filename);
+        return 1;
+    }
+    scanf("%d", &n);
+    getchar();
+    for (i = 0; i < n; i++) {
+        fgets(line, sizeof(line), stdin); 
+        fputs(line, file);                
+    }
+
+  
+    fclose(file);
+    printf("%s Opened\n", filename);
+    printf("Data added Successfully\n");
+
+    return 0;
+}
 
 
 Output:
-
-
-//paste your output here
-
-
+<img width="845" height="373" alt="image" src="https://github.com/user-attachments/assets/19e52b88-ce51-4b25-af5c-6dc2c9ca865d" />
 
 
 
@@ -186,16 +274,41 @@ Algorithm:
 13.End the program by returning 0.
 
 Program:
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 
-//type your code here
+typedef struct {
+    char subject[50];
+    int marks;
+}Student;
+
+int main() {
+    int n;
+    scanf("%d", &n);
+
+    Student *students = (Student *)malloc(n * sizeof(Student));
+
+    for (int i = 0; i < n; i++) {
+        scanf("%s", students[i].subject);
+        scanf("%d", &students[i].marks);
+    }
+
+    for (int i = 0; i < n; i++) {
+        printf("%s  %d\n", students[i].subject, students[i].marks);
+    }
+
+    free(students);
+
+    return 0;
+}
 
 
 
 
 Output:
 
-
-//paste your output here
+<img width="394" height="266" alt="image" src="https://github.com/user-attachments/assets/ab78b19d-734a-48c9-8d88-c5e9df9e1d18" />
 
 
 
