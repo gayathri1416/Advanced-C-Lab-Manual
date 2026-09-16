@@ -15,16 +15,38 @@ Algorithm:
 4.	Exit the program.
  
 Program:
+#include<stdio.h>
+int main()
+{
+    int n;
+    scanf("%d",&n);
+    switch (n)
+    {
+        case 71:printf("seventy one");break;
+        case 72:printf("seventy two");break; 
 
-//type your code here
+        case 73:printf("seventy three");break; 
+
+        case 74:printf("seventy four");break; 
+        case 75:printf("seventy five");break; 
+        case 76:printf("seventy six");break; 
+
+        case 77:printf("seventy seven");break; 
+
+        case 78:printf("seventy eight");break;
+        case 79:printf("seventy nine");break; 
+default:printf("Greater than 79");
+
+    }
+}
 
 
 
 
 Output:
 
+<img width="651" height="305" alt="image" src="https://github.com/user-attachments/assets/fbe791a1-8175-4bab-b240-271a47de0577" />
 
-//paste your output here
 
 
 
@@ -47,16 +69,41 @@ Algorithm:
  
 Program:
 
-//type your code here
+```
+#include<stdio.h>
+int main()
+{
+    char str[100];
+    int freq[10]={0};
+    scanf("%s",str);
+    for(int i=0;str[i]!='\0';i++)
+    {
+        switch(str[i])
+        {
+            case '0':freq[0]++;break;
+            case '1':freq[1]++;break; 
+            case '2':freq[2]++;break; 
+            case '3':freq[3]++;break; 
+            case '4':freq[4]++;break; 
+            case '5':freq[5]++;break; 
+            case '6':freq[6]++;break; 
+            case '7':freq[7]++;break; 
+            case '8':freq[8]++;break;
+            case '9':freq[9]++;break; 
+    
+        }
+    }
+    for(int i=0;i<10;i++)
+    {
+        printf("%d ",freq[i]);
+    }
+}
 
-
-
+```
 
 Output:
 
-
-//paste your output here
-
+<img width="923" height="282" alt="image" src="https://github.com/user-attachments/assets/7b658639-a4e1-44ed-978a-2875659f166b" />
 
 
 
@@ -83,20 +130,54 @@ Free the memory allocated for each string in s Free the memory allocated for s
 7.	End
  
 Program:
+```
 
-//type your code here
+#include<stdio.h>
+#include<string.h>
+int main()
+{
+    int n;
+    scanf("%d",&n);
+    char str[10][10];
+    int i,j,k;
+    for(i=0;i<n;i++)
+    {
+        scanf("%s",str[i]);
+    }
+    if(n==2)
+    {
+        printf("%s %s \n%s %s",str[0],str[1],str[1],str[0]);
+        
+    }
+    
+    else
+    {
+        for(i=0;i<n;i++)
+        {
+            for(j=0;j<n;j++)
+            {
+                for(k=0;k<n;k++)
+                {
+                    
+                    if(i!=j&&j!=k&&k!=i)
+                    {
+                        if((i>j&&strcmp(str[i],str[j])==0)||
+                        (i>k&&strcmp(str[i],str[k])==0)
+                        ||
+                        (j>k&&strcmp(str[j],str[k])==0))
+                        continue;
+                        printf("%s %s %s\n",str[i],str[j],str[k]);
+                    }
+                }
+            }
+        }
+    }
+}
 
-
-
-
+```
 Output:
 
-
-//paste your output here
-
-
-
-
+<img width="598" height="425" alt="image" src="https://github.com/user-attachments/assets/ce397a2f-376c-4e3f-a512-17a468019228" />
 
 
 Result:
@@ -116,17 +197,40 @@ Algorithm:
 7.	End
  
 Program:
+```
 
-//type your code here
-
-
-
+#include<stdio.h>
+int main()
+{
+    int n,i,j,s,m;
+    scanf("%d",&n);
+    s=2*n-1;
+    for(i=0;i<s;i++)
+    {
+        for(j=0;j<s;j++)
+        {
+            m=i;
+            if(j<m)
+            {
+                m=j;
+            }
+            if(s-1-i<m)
+            {
+                m=s-1-i;
+            }
+            if(s-1-j<m)
+            {
+                m=s-1-j;
+                }printf("%d ",n-m);  
+        }printf("\n"); 
+        
+    } 
+    
+}
+```
 
 Output:
-
-
-//paste your output here
-
+![Uploading image.png…]()
 
 
 
@@ -155,48 +259,32 @@ o	Call the square() function and display the result.
 5.	End.
 
 Program:
+```
+#include <stdio.h>
 
-//type your code here
+int square()
+{
+    int num;
+    printf("Enter a number: ");
+    scanf("%d", &num);
+    return num * num;
+}
 
-
-
+int main() {
+    int result;
+    result = square(); 
+    printf("Square of the number is: %d\n", result);
+    return 0;
+}
+```
 
 Output:
 
-
-//paste your output here
-
-
+<img width="512" height="160" alt="image" src="https://github.com/user-attachments/assets/5146fee1-6a17-40b3-b43d-c40cc6843a09" />
 
 
 
 
 Result:
 Thus, the program is verified successfully
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
