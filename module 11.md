@@ -279,9 +279,10 @@ int main() {
 ```
 Output:
 
+<img width="636" height="152" alt="image" src="https://github.com/user-attachments/assets/d91cd0dd-e951-44a0-9553-38bd79f5092a" />
 
 
 Result:
-Thus the program executed successfully.
+
 Thus, the program that counts the number of words in a given sentence is verified 
 successfully.
